@@ -1,0 +1,30 @@
+Folder Structure
+================================================
+
+1. app/Http/Controller/ - It contains Controller File (.php).
+2. app/Models/ - It contains Model File (.php).
+3. resources/views/ - It contains views file (.blade.php ==> .html).
+4. routes/web.php - Routing File
+5. composer.json - It contains dependencies.
+6. .env - It contains constants
+7. /config/database.php
+
+How Laravel works?
+================================================
+
+Routing
+================================================
+To define pages.
+Route with View (Route --> View)
+web.php :- 
+Route::method('url', function(){
+    return view('view name');
+});
+//method ==> get, post
+
+How to make Dynamic hyperlinks
+<a href="{{url('about')}}"></a>
+
+
+Folder Structure
+================================================
