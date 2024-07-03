@@ -1,4 +1,9 @@
 @extends('layout')
+
+@section('title')
+Courses
+@endsection
+
 @section('content')
 <main>
   <div class="container py-4">
