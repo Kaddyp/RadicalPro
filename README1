@@ -28,3 +28,105 @@ How to make Dynamic hyperlinks
 
 Folder Structure
 ================================================
+Routing
+1) What is a Routing?
+2) How Routing Works?
+3) How to create Routes?
+4) Creating Dynamic Hyperlinks 
+5) Routing Methods (view,get, post,delete,put)
+
+Routing Methods
+==============
+
+1) Route::get()
+
+2) Route::post() - FORM
+
+3) Route::view() - We can call view file directly using this method
+
+  Syntax :=> Route::view('page name','view name');
+
+4) Route::delete() - to delete record using ID
+
+5) Route::put() - to update record using ID
+
+6) Passing data or parameters in Routes (single/multiple)
+--------------
+Route::method('pagename/{variablename}',function($variable){
+  return view('view name');
+});
+
+7) Routing Validation or Routing Constraints
+We can validate if the data passed in the route parameter is VALID OR NOT by applying
+validation rules.
+
+whereAlpha('name') - Only Alphabets are allowed.
+whereNumber('id') - Only Digits are allowed.
+whereAlphaNumeric('username') - Only Alphabets and Digits are allowed.
+where('id', 'SYMBOL+') - Custom Validation 
+
+Apply above route validation functions in the route.
+
+Examples :
+
+/* Routing Constraints or Routing Validations */
+Route::get('product/{category}/{id}',function($category,$id){
+    echo "Category :". $category;
+    echo "<br>";
+    echo "Product ID = $id";
+})->whereAlpha('category')->whereNumber('id');
+
+Route::get('user/{id}',function($id){
+    echo "User ID = ".$id;
+})->whereNumber('id');
+
+
+Route::get('student/{id}',function($id){
+    echo "Student ID = ".$id;
+})->where('id', '[0-9]+');
+
+Route::get('user/profile/{uid}',function($uid){
+    echo "Username : ".$uid;
+})->whereAlphaNumeric('uid');
+
+Regular Expression / Symbols :-
+
+[a-zA-Z]+ : only alphabets
+[0-9]+ : only digits
+{length} : specific length
+{n1,n2} : n1 - Minimum length, n2 - Max Length
+
+https://laravel.com/docs/11.x/routing#parameters-regular-expression-constraints
+
+8. Optional Parameters in Routes - We can give any parameter as optional in Route. We need to use ?
+
+Route::get('product/{category}/{id?},function(string $category, ?int $id){
+ ..
+ ..
+});
+
+9. Passing Routing Data to View
+To pass routing data to view, we need to use compact() built-in function.
+
+web.php :-
+
+Route::get('user/profile/{uid}',function($uid){
+   return view('about',compact('uid'));
+})->whereAlphaNumeric('uid');
+
+about.blade.php :-
+
+<p>User ID : {{$uid}}</p>
+
+Named Routes
+===============================================================
+
+sometimes routing is very complex not easy to remember, for this laravel introduce Named Routes,
+in which we can give a "short name" to the route. it will work with only controller.
+
+Syntax:
+Route()->name('Route Name');
+
+Route::get('/contactUs/xyz/wgy/hil/jil', function () {
+    return view('contactUs');
+})->name('studentprofile');

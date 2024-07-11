@@ -1,0 +1,54 @@
+Form
+=======================================================
+
+>> 2 Route use most get and post
+
+Create view file using cmd
+>> php artisan make:view ViewName
+
+Laravel Provide a default table "users" -
+(database/migations/)
+
+Laravel - Default table - "users"
+
+Difference between GET and POST
+
+GET			
+>> Unsecure
+>> Pass Data from one page to another
+>> Slow
+
+POST
+>> Secure
+>> Data Save
+>> Fast
+
+
+What is 419 Page Expired Error?
+
+This error comes usually in FOrm.
+This error means CSRF token not passed.
+
+CSRF - Cross-site request forgery
+-----------------------------------------
+To protect your form from Hackers.
+It passes a unique token.
+
+To Pass CSRF in FORM - @csrf
+
+-------------------------------------------
+FORM Validation
+-----------------------------------------
+To validate form data, we use Validation.
+Rules :-
+required - Field is compulsory
+min:LENGTH - Specify minimum Length
+max:LENGTH - Specify maximum Length
+alpha - Only Alphabets are allowed
+numeric - Only Digits are allowed
+
+
+Advance Validation
+=========================================
+
+Create our custom validation error message

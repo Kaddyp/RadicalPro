@@ -11,6 +11,7 @@ Home
       <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
         <span class="fs-4">Welcome To Radical Technologies</span>
       </a>
+   
     </header>
 
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">

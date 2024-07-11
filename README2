@@ -1,0 +1,30 @@
+Controller
+====================================
+>>To handle logic.
+>> Controller is class which contains function.
+>> App\Http\Controller - all controller files are saved here.
+
+How to create controller?
+php artisan make:controller ControllerName
+
+How Laravel Works
+=================================
+Request--->Route--->Controller--->Model or view
+
+Using Controller in routes
+=================================
+Route::method('pagename', [ControllerName::class, 'functionName'])
+
+Types of Controller in laravel
+===============================
+
+1. Simple Controller
+2. Resource Controller (this controller provides few built in methods like store(), show(), delete())
+
+command to create resource controller
+php artisan make:controller ControllerName --resources
+
+3. Single action controller
+controller class which contains only one function "__invoke()"
+php artisan make:controller ControllerName --invokable
+

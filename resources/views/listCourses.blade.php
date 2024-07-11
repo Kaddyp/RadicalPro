@@ -21,7 +21,7 @@
         <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
             <button type="button" class="btn btn-sm btn-outline-secondary">
-                <a href="{{url('/courses/:courseId')}}">View</a>
+                <a href="{{url('/courses/12')}}">View</a>
             </button>
             <button type="button" class="btn btn-sm btn-outline-secondary">
                 <a href="{{url('checkout')}}">RS. 15000</a>

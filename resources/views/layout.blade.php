@@ -40,6 +40,16 @@
                             <a class="nav-link" href="{{url('contactUs')}}">Contact Us</a>
                         </li>                
                     </ul>
+
+                    <form class="d-flex" role="search">
+                        <button class="btn btn-outline-success mx-2" type="submit">
+                            <a href="{{url('login')}}">SignIn</a>
+                        </button>
+                    
+                        <button class="btn btn-outline-success mx-2" type="submit">
+                            <a href="{{url('register')}}">SignUp</a>
+                        </button>
+                    </form>
                     </div>
                 </div>
             </nav> 
