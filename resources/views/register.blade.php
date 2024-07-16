@@ -16,7 +16,7 @@ SignUp
 
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
       <div class="container-fluid py-5">
-        <form action="" method="post">
+        <form action="/register" method="post">
             @csrf
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

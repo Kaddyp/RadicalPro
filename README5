@@ -1,0 +1,32 @@
+Fetch and Show Data in Table Format 
+=========================================
+web.php :-
+Route::get('show',[UserController::class,'show']);
+
+UserController.php :-
+function show()
+    {
+        // fetch data from users table - SELECT * from users - Model::all() -> Laravel
+        $k = User::all();
+        return view('show',compact('k'));
+
+    }
+
+views/show.blade.php :-
+<h1>Showing All Users Data</h1>
+<table border="2">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+    </tr>
+   @foreach ($k as $z)
+    <tr>
+        <td>{{$z->name}}</td>
+        <td>{{$z->email}}</td>
+        <td>{{$z->phone}}</td>
+    </tr>
+   @endforeach
+</table>
+Error in table we can regenrate table
+///php artisan migrate:refresh

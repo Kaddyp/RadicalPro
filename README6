@@ -1,0 +1,17 @@
+Login / Authentication in Laravel
+=================================
+
+In Laravel, we can login using 2 ways :
+
+1) By Installing Built-in Packages (no code) :
+>> Register, Login, Dashboard, Logout (we get all ready made pages)
+>> Always install in a fresh laravel application
+
+--> Breeze Package (fast, light weight)
+
+Breeze uses Tailwind CSS by default.
+
+
+2) Using Code
+
+Routes, Views, Logic for Login

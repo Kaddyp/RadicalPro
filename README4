@@ -1,3 +1,4 @@
+==> php arisan migration
 ////Connect to database
 
 .env
@@ -14,3 +15,45 @@ DB_PORT=3306
 DB_DATABASE=radical
 DB_USERNAME=root
 DB_PASSWORD=
+
+In laravel table files are knows as migration
+
+Default Migration File - users(database/migration)
+Default Model - User(app/Models/User.php)
+
+Custom
+=========
+Migration - Students
+Model - Student
+
+Migration - Employees 
+Model - Employee
+
+Convert Migration File into Table
+===================================
+CMD ==> php artisan migrate (******Craete Table)
+
+What is Migration?
+======================================
+Model - Handle Database opertions (insert, delete, update). It is a class.
+Migration is resposible for table management.
+Note:-
+Each migration has a corresponding model.
+
+Users Table <------------> User Model
+Students Table <------------> Student Model
+
+Creating Custom Model and Migrations
+========================================
+CMD ==> php artisan make:model ModelName -m
+
+Ex :
+php artisan make:model Student -m
+
+>> Student MODEL
+>> students MIGRATION FILE (in this we define table columns)
+
+CMD ==> php artisan migrate
+
+
+
