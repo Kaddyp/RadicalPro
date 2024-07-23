@@ -27,10 +27,16 @@ Route::post('register', [UserController::class, 'signUpHandler']);
 Route::view('login', 'login')->name('login');
 Route::post('login', [UserController::class, 'login_authenticate']);
 
-// Route::post('logout', [UserController::class, 'logout']);
+Route::get('logout', [UserController::class, 'logout']);
 
-// Route::view('dashboard','dashboard')->middleware('auth');
+Route::view('dashboard','dashboard')->middleware('auth');
 
 
 Route::get('show',[UserController::class,'show']);
 Route::get("delete/{id}",[UserController::class, 'delete']);
+
+Route::get('delete/{id}',[UserController::class,'delete']);
+Route::get('softDeleteRecords',[UserController::class,'softDeleteRecords']);
+
+Route::view("upload","upload");
+Route::post("upload",[UserController::class,"upload"]);

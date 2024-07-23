@@ -16,3 +16,5 @@
     </tr>
    @endforeach
 </table>
+<br>
+<a href="softDeleteRecords">Show Soft Delete Records</a>

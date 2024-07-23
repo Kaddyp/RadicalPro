@@ -1,0 +1,131 @@
+Accessors
+===================================
+
+Accessors are functions used in model to modify data fetched from database.
+
+It does not modify original data. It only modifies data on the UI.
+
+Syntax:
+===========
+
+function getCOLUMNNAMEAttribute($variable){
+
+}
+
+Example :
+Models/User.php :-
+
+function getNameAttribute($k)
+    {
+        return strtoupper($k);
+    }
+
+    function getMobileAttribute($k)
+    {
+        return "+91-".$k;
+    }
+function getEmailAttribute($k)
+    {
+        return ucfirst($k);
+    }
+
+
+
+
+
+Mutators
+==============================
+Mutators in Laravel 
+====================
+
+They are functions written in Model to modify the data before saving to database.
+
+Syntax :
+function setColumnnameAttribute($variable)
+{
+   $this->attributes['columnname'] = Logic;
+}
+
+function setMobileAttribute($val)
+{
+    $this->attributes['mobile'] = "+91-".$val;
+}
+function setNameAttribute($val)
+{
+    $this->attributes['name'] = strtoupper($val);
+}
+Soft Delete
+========================================
+Soft Delete
+============
+
+Data is Not Permanently deleted from database.
+
+Although, user thinks that data is deleted.
+
+We add "deleted_at" column in the table which saves delete timestamp.
+
+Soft Delete is same as "Deactivating Account".
+
+
+Steps for Soft Delete
+=======================
+
+1) Open Migration File, add new column softDeletes()
+
+2) Open Model File, add SoftDeletes class
+
+3) Run - php artisan migrate:fresh
+
+How to Soft Delete a Record?
+=============================
+
+delete()
+
+How to Fetch Soft Deleted Records?
+=====================================
+
+Model::onlyTrashed()->get();
+
+Permanently Delete the Record
+===================================
+
+Model::find($id)->forceDelete();
+
+
+
+
+
+
+
+
+
+Upload Image/File in Laravel
+========================
+
+We use following to upload file :-
+$k = $request->file("input_field_name")->store("public");
+
+The above code does 2 things:
+
+1) Rename File
+
+2) Upload - storage/app/public/ (by default) -----> public/storage/
+
+
+storage/app/public/
+
+If you want to copy this path to public/ :
+
+php artisan storage:link
+
+This command will create storage/ folder inside public/ : "public/storage/"
+
+
+php artisan storage:link
+=======================
+function upload(Request $request)
+{
+        $path = $request->file("file")->store("public");
+        echo "File has been uploaded";
+}

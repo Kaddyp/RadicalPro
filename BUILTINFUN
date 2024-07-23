@@ -4,3 +4,6 @@ save() : Save Data in Table
 all() : Fetch all Data from Table
 find($id) : Find Record of specific ID from table
 delete() : Deletes the Record from table.
+
+Auth()
+attempt([])
