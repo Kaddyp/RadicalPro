@@ -1,0 +1,49 @@
+Laravel 11 New Features
+=================================
+
+Laravel 11 was updated in March-May 2024
+
+
+Features
+================
+
+1) Min. Version PHP 8.2
+
+2) Maintenance Mode :-
+
+You can enable or disable maintenance mode on your live website.
+
+>> php artisan down : Enable
+>> php artisan up : Disable (Website will start working)
+
+3) Health Check Route :- We can check performance report of our website.
+
+website.com/up/
+
+4) once() method - If same method is called again and again, the result is stored in Cache.
+
+function sum()
+{
+   echo "This is sum function";
+}
+sum(); // This is sum function --- Store - Cache
+sum(); // Result (Cache) : This is sum function
+sum(); // Result (Cache) :This is sum function
+sum(); // Result (Cache) :This is sum function
+sum(); // Result (Cache) :This is sum function
+sum(); // Result (Cache) :This is sum function
+
+>> No Resources are used
+>> Time consuming
+>> Fast
+>> Better Performance
+
+5) Default Database : SQLite 
+
+6) New Artisan commands
+
+php artisan make:class ClassName -> New Class
+php artisan make:enum ENum -> Enum Class
+php artisan make:interface Interface -> Interface Class
+
+7) Updated Folder Structure

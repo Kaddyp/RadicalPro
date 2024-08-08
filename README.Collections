@@ -1,0 +1,56 @@
+Collections
+===============================================================
+
+array call collection
+>> It is like PHP array
+>> To use collection in Laravel, we use collect([]) function.
+
+Types of collection
+
+- Simple Collections
+- Associative collection
+
+Route::get('collection_test', function(){
+    $z = collect([10, 20, "Ajay", "Radha", 33.5]);
+
+    forEach($z as $k){
+        print_r($k);
+        echo <br />;
+    }
+
+
+    $z = collect(["name"=>"Ajay", "age"=>"20"]);
+    echo $z["name"];
+});
+
+Collection Built -in Function
+1. Slice / take() - 
+Route::get('collection_test',function()
+{
+
+
+    $z = collect([10,20,30,40,50]);
+
+    
+   $k =  $z->take(3);
+
+    dd($k);
+
+}
+
+2) get() - It return the value it specific key
+
+
+Route::get('collection_test',function()
+{
+    $z = collect(["name"=>"Komal","location"=>"Delhi"]);
+   dd($z->get('location'));
+}
+
+3. flip()- Interchnage key and values
+
+Route::get('collection_test',function()
+{
+    $z = collect(["name"=>"Komal","location"=>"Delhi"]);
+    dd($z->flip());
+}

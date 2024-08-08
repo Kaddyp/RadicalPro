@@ -91,6 +91,19 @@ class UserController extends Controller
     {
         $path = $request->file("file")->store("public");
         echo "File has been uploaded";
+
+        // $k = $request->file("file")->store("public");
+        // $obj = new User();
+        // $obj->name = "Ankit";
+        // $obj->email = "ankit@gmail.com";
+        // $obj->password = "123";
+        // $obj->phone = "9415225555";
+        // $obj->image = $k;
+        // $obj->save();
+        // echo "Uploaded";
+
+        
+
     }
 
     function show()
@@ -99,6 +112,38 @@ class UserController extends Controller
         $k = User::all();
         return view('show',compact('k'));
 
+    }
+
+
+    function save(Request $request)
+    {
+        $name = $request->name;
+        $email = $request->email;
+        $password = $request->password;
+
+        $obj = new User();
+        $obj->name = $name;
+        $obj->email = $email;
+        $obj->password = $password;
+        $obj->save();
+
+        return response()->json(['message'=>'Data has been saved']);
+    }
+
+    function users()
+    {
+        $k = User::all();
+        return response()->json($k);
+    }
+
+    function deleteUsers($id)
+    {
+        User::find($id)->delete();
+        return response()->json(['message'=>'Record has been deleted']);
+    }
+
+    function send_email(){
+      $to = ""
     }
 
 }

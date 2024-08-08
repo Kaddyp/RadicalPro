@@ -1,0 +1,19 @@
+API
+=================================================================
+Application Programming Interface
+
+REST API
+=====================
+API :-
+Application programming interface
+
+
+API Routes :- Laravel API Routes are written in api.php NOT IN web.php
+
+routes/api.php
+
+Till Laravel 10, we had a file api.php
+
+But Laravel 11, this file is removed. To Create api.php :-
+
+php artisan install:api -------> routes/api.php

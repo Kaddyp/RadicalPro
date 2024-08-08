@@ -1,0 +1,20 @@
+Components
+==================================
+
+Re-usable section.
+Introducted components in laravel 9
+
+Advantage:
+1. Reuse
+2. Easy
+
+How to create components?
+
+php artisan make:component ComponentName
+
+-- componentname.php
+-- componentname.blade.php
+
+How to use component in any view?
+
+<x-coponentname />

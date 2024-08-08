@@ -1,0 +1,20 @@
+Relationship
+==================
+
+To Join 2 or more tables.
+
+To define relation between two tables.
+
+1) one to one relationship / hasOne
+2) one to many relationship / hasMany
+3) many to one / belongsTo
+4) many to many / belongsToMany
+
+
+
+Pagination//Data table plugins
+ajax plugins
+Data tableSending email
+ajax
+google ReCaptcha Integration in form
+HTML Template to laravel
